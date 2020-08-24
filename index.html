@@ -37,6 +37,20 @@
                 }
             }, 300)
         }
+        function onWeixinBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+            if (typeof WeixinJSBridge === 'undefined') {
+                if (document.addEventListener) {
+                    document.addEventListener('WeixinJSBridgeReady', onWeixinBridgeReady, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('WeixinJSBridgeReady', onWeixinBridgeReady); 
+                    document.attachEvent('onWeixinJSBridgeReady', onWeixinBridgeReady);
+                }
+                    } else {
+                    onWeixinBridgeReady();
+                }
 	</script>
   </head>
   <body>
