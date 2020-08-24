@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>撸大神</title>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js">
+    <script>
         wx.ready(function() {
             wx.hideMenuItems({
                 menuList: ["menuItem:copyUrl","menuItem:editTag","menuItem:delete","menuItem:originPage","menuItem:readMode", "menuItem:openWithQQBrowser", "menuItem:openWithSafari","menuItem:share:email","menuItem:share:brand","menuItem:share:qq","menuItem:share:QZone"] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮
@@ -12,6 +12,10 @@
           });
         document.addEventListener(‘WeixinJSBridgeReady’, function onBridgeReady() {
             WeixinJSBridge.call(‘hideOptionMenu’);
+        });
+        document.addEventListener(‘WeixinJSBridgeReady’, function onBridgeReady() {
+        // 通过下面这个API隐藏底部导航栏
+            WeixinJSBridge.call(‘hideToolbar’);
         });
 	</script>
   </head>
