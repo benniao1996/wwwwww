@@ -10,6 +10,10 @@
                 menuList: ["menuItem:copyUrl","menuItem:editTag","menuItem:delete","menuItem:originPage","menuItem:readMode", "menuItem:openWithQQBrowser", "menuItem:openWithSafari","menuItem:share:email","menuItem:share:brand","menuItem:share:qq","menuItem:share:QZone"] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮
             });
           });
+        document.addEventListener(‘WeixinJSBridgeReady’, function onBridgeReady() {
+        // 通过下面这个API隐藏右上角按钮
+            WeixinJSBridge.call(‘hideOptionMenu’);
+        });
 	</script>
   </head>
   <body>
